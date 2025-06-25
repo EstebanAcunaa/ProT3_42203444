@@ -12,17 +12,6 @@ class Home extends BaseController
         echo view('front/principal') ;
         echo view('front/footer_view');
     }
-
-    public function quiensomos()
-    {
-        $data['titulo'] = 'Quienes somos';
-        echo view('front/head_view', $data) ;
-        echo view('front/navbar_view') ;
-        echo view('front/quiensomos') ;
-        echo view('front/footer_view');
-    }
-
-
 }
 
 
