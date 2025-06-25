@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 class Registro extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return 
-            view('front/head_view') .
-            view('front/navbar_view') .
-            view('front/registro') .
-            view('front/footer_view');
+        $data['titulo'] = 'Registro';
+        echo view('front/head_view', $data) ;
+        echo view('front/navbar_view') ;
+        echo view('back/Usuario/registro') ;
+        echo view('front/footer_view');
     }
 }
