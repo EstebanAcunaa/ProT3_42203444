@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-    return 
-        view('front/head_view') .
-        view('front/navbar_view') .
-        view('front/principal') .
-        view('front/footer_view');
+        $data['titulo'] = 'pagina principal';
+        echo view('front/head_view') ;
+        echo view('front/navbar_view') ;
+        echo view('front/principal') ;
+        echo view('front/footer_view');
     }
 }
 

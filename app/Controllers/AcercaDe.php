@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 class AcercaDe extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return 
-            view('front/head_view') .
-            view('front/navbar_view') .
-            view('front/acercade') .
-            view('front/footer_view');
+        $data['titulo'] = 'Acerca de';
+        echo view('front/head_view') ;
+        echo view('front/navbar_view') ;
+        echo view('front/acercade') ;
+        echo view('front/footer_view');
     }
 }
