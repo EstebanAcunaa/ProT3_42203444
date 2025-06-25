@@ -2,23 +2,24 @@
   <div class="card">
     <div class="card-header text-center">
       <h4>Registrarse</h4>
-  
+        </div>  
     <?php $validation = \config\Services::validation(); ?>
 
     <div class="card-body">
-      <form method="post" action="<?php echo base_url('/enviar-form')?>">
-        <?=csrf_field();?>
-          <?=csrf_field();?>
-          <?php if(!empty (session()->getFlashdata('fail'))):?>
+      <?php if(!empty (session()->getFlashdata('fail'))):?>
             <div class="alert alert-danger"><?=session()->getFlashdata('fail');?></div>
             <?php endif?>
               <?php if(!empty (session()->getFlashdata('success'))):?>
-                <div class="alert alert-danger"><?=session()->getFlashdata('success');?></div>
+                <div class="alert alert-success"><?=session()->getFlashdata('success');?></div>
                 <?php endif?>
+      <form method="post" action="<?php echo base_url('/enviar-form')?>">
+        <?=csrf_field();?>
+          <?=csrf_field();?>
+          
 
         <div class="mb-2 mt-1">
           <div class="form">
-          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+          <label for="nombre" class="form-label">Nombre</label>
           <input name="nombre" type="text" class="form-control" placeholder="Nombre">
           <!--Error-->
             <?php if($validation->getError('nombre')) {?>
@@ -44,9 +45,9 @@
          <label for="usuario" class="form-label">Usuario</label>
          <input type="text" class="form-control" name="usuario" placeholder="Usuario">
          <!--Error-->
-            <?php if($validation->getError('Usuario')) {?>
+            <?php if($validation->getError('usuario')) {?>
           <div class="alert alert-danger mt-2">
-            <?= $error = $validation->getError('Usuario'); ?>
+            <?= $error = $validation->getError('usuario'); ?>
           </div>
             <?php }?>
         </div>
@@ -83,4 +84,3 @@
       </div>
     </div>
   </div>
-</div>

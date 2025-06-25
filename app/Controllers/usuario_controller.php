@@ -9,14 +9,14 @@ class usuario_controller extends Controller {
 
     public function __construct()
     {
-        helper(['from', 'url']);
+        helper(['form', 'url']);
     }
 
     public function create(){
 
-        $dato['titulo']='Registro';
+        $dato['titulo']='registro';
         echo view ('front/head_view',$dato);
-        echo view ('front/nav_view');
+        echo view ('front/navbar_view');
         echo view ('back/usuario/registro');
         echo view ('front/footer_view');
 
@@ -24,7 +24,7 @@ class usuario_controller extends Controller {
     }
     
 
-    public function fromValidation() {
+    public function formValidation() {
 
         $input = $this ->validate([
             'nombre' => 'required|min_length[3]',
@@ -36,16 +36,16 @@ class usuario_controller extends Controller {
         ],
     );
     
-    $fromModel = new usuario_models();
+    $formModel = new usuario_models();
 
         if (!$input) {
-            $data['titulo']='Registro';
+            $data['titulo']='registro';
             echo view ('front/head_view', $data);
             echo view ('front/navbar_view');
             echo view('back/usuario/registro', ['validation' => $this->validator]);
             echo view('front/footer_view');
         } else{
-            $fromModel->save([
+            $formModel->save([
                 'nombre' => $this->request->getVar('nombre'),
                 'apellido' => $this->request->getVar('apellido'),
                 'usuario' => $this->request->getVar('usuario'),
@@ -53,8 +53,8 @@ class usuario_controller extends Controller {
                 'pass' => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT)
             ]);
 
-            session()->setFlashdata('succes', 'Usuario registrado con exito');
-            return $this->response->redirect('/login');
+            session()->setFlashdata('success', 'Usuario registrado con exito');
+            return $this->response->redirect('/ProT3_42203444/login');
 
         }
 
