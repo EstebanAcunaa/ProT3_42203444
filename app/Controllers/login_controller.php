@@ -54,7 +54,7 @@ class login_controller extends BaseController
 
             }else{
                 $session->setFlashdata('msg', 'Password incorrecta');
-                return redirect()->to('login_controller');
+                return redirect()->to('/login_controller');
              }
             }
         else{

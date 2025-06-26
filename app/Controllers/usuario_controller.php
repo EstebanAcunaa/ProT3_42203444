@@ -54,7 +54,7 @@ class usuario_controller extends Controller {
             ]);
 
             session()->setFlashdata('success', 'Usuario registrado con exito');
-            return $this->response->redirect('/ProT3_42203444/login');
+            return $this->response->redirect('/ProT3_42203444/registro');
 
         }
 

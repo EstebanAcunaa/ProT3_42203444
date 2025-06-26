@@ -1,14 +1,26 @@
 <!--inicio de la barra-->
+<?php 
+  $session= session();
+  $nombre= $session->get('nombre');
+  $perfil =$session->get('perfil_id');
+  ?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand me-auto barra" href="<?php echo base_url('/')?>">
+      <a class="navbar-brand me-auto barra" href="<?php echo base_url('principal')?>">
         <img src="<?php echo base_url('assets/img/logoempresa.jpg')?>" alt="marca" width="75" height="30" class="img-fluid" style="border: none;">
       </a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <?php if(session()->perfil_id == 1): ?>
+      <div class="btn btn-secundary active btnUser btn-sm">
+      <a href="">ADMIN: <?php echo session('nombre');?></a>
+      </div>
+      
+  </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
