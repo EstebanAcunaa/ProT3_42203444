@@ -11,7 +11,7 @@
       <?php endif;?>
 
     <div class="card-body">
-      <form method="post" action="<?php echo base_url('/enviar_login')?>">
+      <form method="post" action="<?php echo base_url('/enviarlogin')?>">
         <div class="mb-2 mt-1">
           <label for="email" class="form-label">Correo</label>
           <input type="email" class="form-control" name="email" placeholder="Correo">
