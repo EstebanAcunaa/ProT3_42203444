@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand me-auto barra" href="<?php echo base_url('principal')?>">
+      <a class="navbar-brand me-auto barra" href="<?php echo base_url('/')?>">
         <img src="<?php echo base_url('assets/img/logoempresa.jpg')?>" alt="marca" width="75" height="30" class="img-fluid" style="border: none;">
       </a>
     </div>
